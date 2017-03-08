@@ -22,6 +22,6 @@ class TypeErasureProblem {
   
   def execute(): Unit = {
     test1(new Wrapper(new A())) // Should output: A class :)
-    test1(new Wrapper(new B())) // Should output: B class :)
+    test1(new Wrapper(new B())) // Should output: 12
   }*/
 }
