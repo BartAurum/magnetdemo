@@ -26,14 +26,14 @@ sealed trait CompletionMagnet {
 }
 
 object CompletionMagnet {
-  implicit def fromHttpResponseFuture(wrapper: Wrapper[A]): CompletionMagnet =
+  implicit def fromWrapperA(wrapper: Wrapper[A]): CompletionMagnet =
     new CompletionMagnet {
       type Result = String
       def apply(): Result = {
          wrapper.obj.someText
       }
     }
-  implicit def fromStatusCodeFuture(wrapper: Wrapper[B]): CompletionMagnet =
+  implicit def fromWrapperB(wrapper: Wrapper[B]): CompletionMagnet =
     new CompletionMagnet {
       type Result = Int
       def apply(): Result = {
